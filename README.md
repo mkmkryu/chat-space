@@ -38,5 +38,32 @@ Things you may want to cover:
 ##usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, foreign_key: true|
-|comment|string|null: false, foreign_key: true|
+|name|string|null: false|
+|message|text|null: false|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- has_many :group
+- has_many :messages
+
+
+##messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|body|text|null: false|
+|image|string||
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :group
+
+##groupsテーブル　
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+- has_many :user
