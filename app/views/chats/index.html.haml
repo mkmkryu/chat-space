@@ -1,0 +1,34 @@
+%div{class: "flash-box"}
+    %div{class: "notice"}グループを作成しました。
+%div{class: "wrapper"}
+    %div{class: "chat-side"}
+        %div{class: "side-header"}
+            %p{class: "side-header__user-name"} 竜太郎
+            %ul{class: "user-menu"}
+                %li{class: "user-menu__edit_user"}
+                    %a{href: "/groups/new"}
+                        %i{class: "fa fa-edit"}
+                %li{class: "user-menu_new-group"}
+                    %a{href:"/users/1/edit"}
+                        %i{class:"fa fa-cog"}
+        %div{class: "groups"}
+            %a{href: "/groups/1/messages"} 
+            %div{class: "group"}
+                %p{class:"group__group-name"}test group
+                %p{class:"group__latest-message"}さようなら
+    %div{class: "chat-main"}
+        %div{class: "main-header"}
+            %div{class: "current-group"}
+                %h2{class: "current-group__name"}
+                %ul{class: "member-list"}"Member"
+                %li{class: "member-list__member"}けんた
+            %a{href: "/groups/1/edit"}
+                %div{class: "main-header__edit-btn"}Edit
+        %div{class: "messages"}
+            %div{class: "message"}
+                %div{class: "upper-info"}
+                    %p{class: "upper-info__user"}竜太郎
+                    %p{class: "upper-info__date"}2019/05/06(Mon) 18:00:00
+                %p{class: "message__text"}こんにちは!
+        %div{class: "form"}
+            %form{class: "new-message"}
