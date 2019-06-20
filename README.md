@@ -33,3 +33,10 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+
+##usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, foreign_key: true|
+|comment|string|null: false, foreign_key: true|
