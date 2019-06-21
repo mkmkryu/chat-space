@@ -13,19 +13,18 @@
 ##usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|message|text|null: false|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false, index:true|
 
 ### Association
-- has_many :group
+- has_many :groups through: :members
 - has_many :messages
+- has_many :members
 
 
 ##messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text||
 |image|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
@@ -38,7 +37,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :user
+- has_many :users, through: :members
+- has_many :members
+- has_many :messages, through: :members
